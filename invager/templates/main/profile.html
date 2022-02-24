@@ -1,0 +1,55 @@
+{% extends 'base.html' %} 
+{% block content %} 
+    {% include 'main/components/navbar.html' %} 
+
+        <div class="row">
+            <div class="col s12 m6 right">
+                <div class="card hoverable offset-s3 purple lighten-4">
+                    <nav class="blue darken-2">
+                        <div class="nav-wrapper">
+                            <h4 class="brand-logo"> &nbsp; Profile</a>
+                        </div>
+                    </nav>
+                    <div class="card-content">
+                        <div class="row">
+                        <div class="col s8">
+                            <table class="highlight">
+                                <thead>
+                                <tr>
+                                    <th><h5>Profile Information</h5></th>
+                                    <th><a class="waves-effect waves-light btn" href="update/">Edit</a></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td class="bold">Name</td>
+                                    <td>{{user.employee.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="bold">Email</td>
+                                    <td>{{user.employee.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="bold">Phone</td>
+                                    <td>{{user.employee.phonenumber}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="bold">Department</td>
+                                    <td>{{user.employee.department}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col s4">
+                            <img src="{{user.employee.image.url}}" alt="Profile pic" width="200" hight="200" class="center">
+                            <a href="dashboard/{{user.employee.pk}}">dashboard</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

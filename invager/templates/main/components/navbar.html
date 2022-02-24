@@ -1,0 +1,17 @@
+  <nav class = "purple darken-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Invager</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'userdashboard' user.employee.pk %}" >Dashboard</a></li>
+        <li>
+          {% if request.user.is_authenticated %} 
+            <a class="waves-effect waves-light btn", href="{% url 'logout' %}">Logout</a>
+          {% else %}  
+            <a class="waves-effect waves-light btn", href="{% url 'login' %}">Login</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </nav>
+        

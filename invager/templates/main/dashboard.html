@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% block content %} 
+    {% include 'main/components/navbar.html' %} 
+
+        <div class="row">
+            <div class="col s12 m6 right">
+                <div class="card hoverable offset-s3 purple lighten-4">
+                    <nav class="blue darken-2">
+                        <div class="nav-wrapper">
+                            <h4 class="brand-logo"> &nbsp; {{object.name}} </a>
+                        </div>
+                    </nav>
+                    <div class="card-content">
+                        <div class="row">
+                            <table class="highlight">
+                                <thead>
+                                <tr>
+                                    <th><h5>Assets is possesion.</h5></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for asset in object.assets.all %} 
+                                    <tr>
+                                        <td>{{ asset.id }}</td>
+                                        <td>{{ asset }}</td>    
+                                        
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

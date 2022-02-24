@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'authen/components/navbar.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col center offset-s3 p3">
+                <div class="card purple lighten-4">
+                    <span class="card-hading">Logout Page.</span>
+                    <div class="class-content red-text">
+                        <div class="alert alert-danger">
+                            <p class="red lighten-3">You have been logged out! <a href="{% url 'login' %}">Click here to login.</a></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

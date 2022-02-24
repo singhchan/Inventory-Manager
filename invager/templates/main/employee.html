@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+{% block content %} 
+    {% include 'main/components/navbar.html' %} 
+
+        <div class="row">
+            <div class="col s12 m6 right">
+                <div class="card hoverable offset-s3 purple lighten-4">
+                    <nav class="blue darken-2">
+                        <div class="nav-wrapper">
+                            <h4 class="brand-logo"> &nbsp; {{name}} </a>
+                        </div>
+                    </nav>
+                    <div class="card-content">
+                        <div class="row">
+                            <table class="highlight">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>from</th>
+                                    <th>issueraised</th>
+                                    <th>underprocess</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for asset in assets %} 
+                                    <tr>
+                                        <td>{{ asset.id }}</td>
+                                        <td>{{ asset.name }}</td>  
+                                        <td>{{ asset.fromdate }}</td>
+                                        <td>{{ asset.issueraised }}</td>  
+                                        <td>{{ asset.underprocess }}</td>  
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
